@@ -5,7 +5,8 @@
 using namespace std;
 
 int main() {
-    // Part 1
+    // Part 1: Calorie Counting
+    
     // open input file
     ifstream input;
     input.open("input.txt");
@@ -32,7 +33,7 @@ int main() {
     input.close();
 
     // we want the max value of vector
-    // return max of score vector
+    // using a for loop, we compare values and find the max
     int result = 0;
     for (int score : scores){
         if (result < score){
@@ -48,10 +49,11 @@ int main() {
     // sort through scores using built in sort, can use other methods too
     sort(scores.begin(), scores.end());
 
-    // we want to get the last 3 elements in sorted scores
+    // we want to get the last 3 elements in sorted scores since sort has elems in least to greatest
     int i = 0;
     int index = scores.size() - 1;
     int top3Scores = 0;
+    
     while (i < 3){
         top3Scores += scores[index];
 
